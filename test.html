@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Forms</title>
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 640px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-header {
+      border-left: 6px solid #4285f4;
+      padding-left: 16px;
+      margin-bottom: 30px;
+    }
+
+    .form-header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #202124;
+    }
+
+    .form-header p {
+      color: #5f6368;
+      margin-top: 4px;
+      font-size: 14px;
+    }
+
+    .form-question {
+      margin-bottom: 30px;
+    }
+
+    .form-question label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #202124;
+    }
+
+    .form-question input[type="text"],
+    .form-question textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .submit-button {
+      background-color: #1a73e8;
+      color: white;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #155ab6;
+    }
+
+    .disclaimer {
+      margin-top: 30px;
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-header">
+      <h1>설문 제목</h1>
+      <p>여기에 설문 설명이 들어갑니다.</p>
+    </div>
+
+    <form>
+      <div class="form-question">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name">
+      </div>
+
+      <div class="form-question">
+        <label for="email">이메일</label>
+        <input type="text" id="email" name="email">
+      </div>
+
+      <div class="form-question">
+        <label for="opinion">의견을 작성해주세요</label>
+        <textarea id="opinion" name="opinion" rows="4"></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">제출</button>
+    </form>
+
+    <div class="disclaimer">
+      ※ 이 웹사이트는 교육용 시뮬레이션이며 실제 Google Forms가 아닙니다.
+    </div>
+  </div>
+</body>
+</html>
