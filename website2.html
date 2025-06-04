@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Google 로그인 - 비밀번호 입력</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      color: black;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 40px;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+      border-radius: 8px;
+    }
+
+    .logo {
+      width: 75px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .email-display {
+      display: flex;
+      align-items: center;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    .email-display img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .email-text {
+      flex-grow: 1;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 10px;
+    }
+
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .checkbox-label {
+      font-size: 14px;
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-label input {
+      margin-right: 5px;
+    }
+
+    .forgot {
+      color: #1a73e8;
+      font-size: 14px;
+      margin: 20px 0;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .btn-next {
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    .footer a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #777;
+    }
+
+    .lang {
+      display: block;
+      margin-top: 20px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" class="logo" alt="Google Logo">
+    <h1>시작하기</h1>
+
+    <div class="email-display" onclick="goToStep1()">
+      <img src="https://www.gstatic.com/images/icons/material/system/2x/account_circle_black_24dp.png" alt="계정 아이콘">
+      <span class="email-text" id="email-display">email@example.com</span>
+      <span>▼</span>
+    </div>
+
+    <div class="input-group">
+      <label for="password">비밀번호 입력</label>
+      <input type="password" id="password">
+    </div>
+
+    <label class="checkbox-label">
+      <input type="checkbox" id="show-password"> 비밀번호 표시
+    </label>
+
+    <div class="forgot" onclick="goToForgot()">비밀번호 찾기</div>
+
+    <button class="btn-next" onclick="goToNext()">다음</button>
+    <div style="clear: both;"></div>
+  </div>
+
+  <div class="footer">
+    <span class="lang">한국어 ▼</span>
+    <div>
+      <a href="#">도움말</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">약관</a>
+    </div>
+  </div>
+
+  <script>
+    // URL에서 email 파라미터 가져오기
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('email') || 'example@example.com';
+    document.getElementById('email-display').innerText = email;
+
+    // 비밀번호 표시/숨기기
+    document.getElementById('show-password').addEventListener('change', function() {
+      const pwInput = document.getElementById('password');
+      pwInput.type = this.checked ? 'text' : 'password';
+    });
+
+    // 계정 바 클릭 → 이전 페이지로 이동하며 이메일 유지
+    function goToStep1() {
+      window.location.href = `website.html?email=${encodeURIComponent(email)}`;
+    }
+
+    // 비밀번호 찾기 페이지로 이동
+    function goToForgot() {
+      window.location.href = `forgot.html?email=${encodeURIComponent(email)}`;
+    }
+
+    // 다음 단계로 이동
+    function goToNext() {
+      window.location.href = `success.html`;
+    }
+  </script>
+</body>
+</html> 
