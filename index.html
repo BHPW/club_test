@@ -42,13 +42,14 @@
     }
 
     a {
-      color: #8ab4f8;
-      text-decoration: none;
+@@ -35,16 +47,30 @@
     }
 
     input[type="text"] {
+      width: 100%;
       width: calc(100% - 24px);
       padding: 12px;
+      margin: 20px 0;
       margin: 20px 0 5px 0;
       border: 1px solid #555;
       border-radius: 4px;
@@ -74,9 +75,7 @@
     .btn-next {
       float: right;
       background-color: #8ab4f8;
-      color: black;
-      padding: 10px 20px;
-      border: none;
+@@ -54,30 +80,208 @@
       border-radius: 4px;
       font-size: 15px;
       cursor: pointer;
@@ -174,9 +173,12 @@
     <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png" alt="Google">
     <h1>로그인</h1>
     <p>Google 계정을 사용하세요. 계정이 이 기기에 추가되어 다른 Google 앱에서 사용할 수 있게 됩니다.</p>
+    <a href="#">계정 사용에 관해 자세히 알아보기</a>
     <a href="#" id="learnMoreLink">계정 사용에 관해 자세히 알아보기</a>
     <input type="text" placeholder="이메일 또는 휴대전화">
     <div class="links">
+      <a href="#">이메일을 잊으셨나요?</a>
+      <a href="#">계정 만들기</a>
       <a href="#" id="forgotEmailLink">이메일을 잊으셨나요?</a>
 
       <div class="dropdown">
@@ -191,14 +193,7 @@
       </div>
 
     </div>
-    <button id="nextButton">다음</button>
-    <script>
-        const nextButton = document.getElementById('nextButton');
-
-        nextButton.addEventListener('click', function() {
-            window.open('website.html');
-        });
-    </script>
+    <button class="btn-next">다음</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
