@@ -1,7 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
+  <meta charset="UTF-8">
+  <title>경고</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      animation: bgPulse 3s infinite;
+    }
+
+    .warning-box {
+      text-align: center;
+      background-color: #1c1c1c;
+      padding: 40px;
+      border: 3px solid red;
+      border-radius: 12px;
+      box-shadow: 0 0 20px red;
+      animation: shake 0.3s infinite;
+    }
+
+    .warning-icon {
+      font-size: 60px;
+      color: red;
+      margin-bottom: 20px;
+      animation: pulse 1s infinite;
+    }
+
+    .warning-text {
+      color: red;
+      font-size: 22px;
+      font-weight: bold;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes shake {
+      0% { transform: translate(1px, 1px); }
+      25% { transform: translate(-1px, -2px); }
+      50% { transform: translate(-3px, 0px); }
+      75% { transform: translate(2px, 2px); }
+      100% { transform: translate(1px, -1px); }
+    }
+
+    @keyframes bgPulse {
+      0%, 100% { background-color: #000; }
+      50% { background-color: #220000; }
+    }
+  </style>
 </head>
 <body>
+
+  <div class="warning-box">
+    <div class="warning-icon">⚠️</div>
+    <div class="warning-text">위험! 위험한 사이트입니다!</div>
+  </div>
+
 </body>
 </html>
