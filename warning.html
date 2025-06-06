@@ -68,8 +68,11 @@
 </head>
 <body>
   <script>
-    await sleep(5000);
-    alert("사실 가짜사이트였다?!");
+    async function test() {
+  await sleep(3000); // 3초 동안 지연
+  alert('사실 가짜 사이트였다?!');
+}
+
   </script>
   <div class="warning-box">
     <div class="warning-icon">⚠️</div>
