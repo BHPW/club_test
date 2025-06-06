@@ -68,11 +68,18 @@
 </head>
 <body>
   <script>
-    function myFunction() {
-      setTimeout(function() {
-        alert("사실 가짜 사이트였다?!");
-      }, 5000); 
-    }
+    async function f() {
+
+    let promise = new Promise((resolve, reject) => {
+      setTimeout(() => resolve("사실 가짜 사이트였다?!"), 5000)
+    });
+
+    let result = await promise; // 프라미스가 이행될 때까지 기다림 (*)
+
+    alert(result); // "완료!"
+  }
+
+  f();
   </script>
   <div class="warning-box">
     <div class="warning-icon">⚠️</div>
