@@ -68,7 +68,13 @@
 </head>
 <body>
   <script>
-  setTimeout(alert('사실 가짜 사이트였다?!'), 5000);
+    async function sleep(ms) {
+    return new Promise(resolve => {
+    setTimeout(resolve, ms);
+    });
+    sleep(5000);
+    alert("사실은 가짜 사이트였다?!")
+}
 }
 
   </script>
