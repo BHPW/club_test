@@ -68,15 +68,11 @@
 </head>
 <body>
   <script>
-    async function sleep(ms) {
-    return new Promise(resolve => {
-    setTimeout(resolve, ms);
-    });
-    await sleep(5000);
-    alert("사실은 가짜 사이트였다?!")
-}
-}
-
+    function myFunction() {
+      setTimeout(function() {
+        alert("사실 가짜 사이트였다?!");
+      }, 5000); 
+    }
   </script>
   <div class="warning-box">
     <div class="warning-icon">⚠️</div>
