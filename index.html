@@ -175,7 +175,7 @@
     <h1>로그인</h1>
     <p>Google 계정을 사용하세요. 계정이 이 기기에 추가되어 다른 Google 앱에서 사용할 수 있게 됩니다.</p>
     <a href="#" id="learnMoreLink">계정 사용에 관해 자세히 알아보기</a>
-    <input type="text" placeholder="이메일 또는 휴대전화">
+    <input type="text" id='email' placeholder="이메일 또는 휴대전화">
     <div class="links">
       <a href="#" id="forgotEmailLink">이메일을 잊으셨나요?</a>
 
@@ -238,6 +238,8 @@
           emailInput.classList.add('input-blue-border');
           errorMessageDiv.style.display = 'none';
           errorMessageDiv.textContent = '';
+          let email = document.getElementById("email").value;
+          localStorage.setItem("email", email);
           window.location.href = "password.html";
           // 실제 다음 단계로 넘어가는 시뮬레이션 코드를 여기에 넣으면 됨
         }
