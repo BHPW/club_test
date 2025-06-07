@@ -199,6 +199,8 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      localStorage.setItem("save",'이메일 또는 휴대전화');
+      
       const emailInput = document.querySelector('input[type="text"]');
       const nextButton = document.querySelector('.btn-next');
       const forgotEmailLink = document.getElementById('forgotEmailLink');
