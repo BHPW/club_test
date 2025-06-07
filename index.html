@@ -258,14 +258,6 @@
       const errorMessageDiv = document.createElement("div");
       errorMessageDiv.classList.add("error-message");
       emailInput.parentNode.insertBefore(errorMessageDiv, emailInput.nextSibling);
-
-      let value = localStorage.getItem('save');
-
-      if (value) {
-        emailInput.value = value;
-      } else {
-        emailInput.placeholder = "이메일 또는 휴대전화";
-      }
       
       emailInput.focus();
       emailInput.classList.add("input-blue-border");
