@@ -176,6 +176,12 @@
     <p>Google 계정을 사용하세요. 계정이 이 기기에 추가되어 다른 Google 앱에서 사용할 수 있게 됩니다.</p>
     <a href="#" id="learnMoreLink">계정 사용에 관해 자세히 알아보기</a>
     <input type="text" id='email' placeholder="이메일 또는 휴대전화">
+      <script>
+          // 로컬 스토리지에 저장된 값 가져오기
+          let value = localStorage.getItem('save');
+
+          document.getElementById('input[type="text"]').textContent = value;
+        </script>
     <div class="links">
       <a href="#" id="forgotEmailLink">이메일을 잊으셨나요?</a>
 
